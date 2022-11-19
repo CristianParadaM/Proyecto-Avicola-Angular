@@ -1,0 +1,15 @@
+<header class="container-fluid">
+    <img src="assets/logo.png" alt="logo" id="logo">
+    <span class="d-inline title">{{titleApp}}</span>
+    <input type="checkbox" name="check" id="check">
+    <label for="check" class="menu"><i class="fa-solid fa-bars"></i></label>
+    <ul>
+        <li (click)="changeIndex(2)"><button class="text button-header2">{{bntRegistryText}}</button>
+        </li>
+        <li (click)="changeIndex(1)"><button class="text button-header1">{{btnLoginText}}</button></li>
+        <li *ngIf="index == 0" class="text" (click)="moveScroll(getHeightScreen())"><a>{{btnContact}}</a></li>
+        <li *ngIf="index == 0" class="text" (click)="moveScroll(getHeightScreen()/2)"><a>{{btnAboutUs}}</a></li>
+        <li class="text" (click)="index == 0? moveScroll(0) : changeIndex(0)"><a>{{btnHome}}</a>
+        </li>
+    </ul>
+</header>

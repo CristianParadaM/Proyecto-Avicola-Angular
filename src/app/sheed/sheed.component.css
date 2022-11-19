@@ -1,0 +1,209 @@
+
+.search {
+    width: 100%;
+    height: 100%;
+    color: #FFF7E1;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+.input-div {
+    position: relative;
+    background-color: #4D3529;
+    border-width: 1px;
+    border-color: #FFF7E1;
+    border-style: solid;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.titleborderSearch {
+    display: block;
+    font-size: 10px;
+    background-color: #2C1D16;
+    padding-left: 5px;
+    padding-right: 5px;
+    transform: translate(10px, -48px);
+    text-align: left;
+    position: absolute;
+    color: #FFF7E1;
+}
+
+
+.table {
+    padding: 0px;
+    margin-top: 20px;
+    background-color: #4D3529;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #FFF7E1;
+    border-style: solid;
+    height: 74vh;
+    overflow: scroll;
+}
+
+table {
+    width: 100%;
+    color: #FFF7E1;
+}
+
+.line {
+    border-color: #FFF7E1;
+    border-bottom-width: 1px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-style: solid;
+    width: 430.5%
+}
+
+td {
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    position: relative;
+}
+
+th {
+    font-size: 20px;
+    text-align: center;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-color: #FFF7E1;
+    border-style: solid;
+}
+
+th:hover {
+    background-color: #614435;
+    cursor: pointer;
+}
+
+tbody {
+    background-color: transparent;
+}
+
+.button-accordion {
+    background-color: transparent;
+    color: #FFF7E1;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    height: 60px;
+}
+
+tr {
+    border: none;
+}
+
+tr[selected="true"]{
+    background-color: #614435;
+}
+
+td[colspan="5"] {
+    background-color: #614435;
+}
+
+.accordion {
+    background-color: transparent;
+}
+
+tr[class="accordion-item"]:hover {
+    background-color: #614435;
+    cursor: pointer;
+}
+
+.input-galpon {
+    width: 100%;
+    height: 30.5px;
+    color: #FFF7E1;
+    border-color: #FFF7E1;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titleborder {
+    display: block;
+    font-size: 10px;
+    background-color: #614435;
+    padding-left: 10px;
+    padding-right: 10px;
+    transform: translate(10px, -48px);
+    text-align: left;
+    position: absolute;
+    color: #FFF7E1;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    filter: invert(0.9);
+}
+
+option {
+    background-color: #2C1D16;
+}
+
+.advert {
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 15px;
+    -webkit-text-stroke-color: #FFE699;
+    -webkit-text-stroke-width: 1px;
+}
+
+.delete-galpon {
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    position: relative;
+    background-color: #FF5050;
+    border-radius: 5px;
+    border-color: #FFF7E1;
+    border-style: solid;
+    color: #FFF7E1;
+}
+
+.delete-galpon:hover {
+    border-color: red;
+}
+
+.add-galpon {
+    height: 40px;
+    margin-top: 10px;
+    position: relative;
+    background-color: #EF6A2F;
+    border-radius: 5px;
+    font-size: 20px;
+    border-color: #FFF7E1;
+    border-style: solid;
+    color: #FFF7E1;
+}
+
+.add-galpon:hover {
+    border-color: orange;
+}
+
+.card-body {
+    background-color: #614435;
+    border-color: #FFF7E1;
+    border-style: solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

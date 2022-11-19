@@ -1,0 +1,34 @@
+.container-fluid {
+    width: 100%;
+    height: calc(100vh - 72px);
+    overflow: hidden;
+}
+
+#carouselExampleInterval{
+    margin-top: 20px;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 20px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #FFF7E1;
+    border-style: solid;
+}
+
+.new-img{
+    width: 50vw;
+    height: calc(50vh - 5px);
+    transform: translate(0px,3px);
+}
+
+#contact{
+    background-color: #231711;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #FFF7E1;
+    border-style: solid;
+}
