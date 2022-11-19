@@ -28,6 +28,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Screenshots
 
-[![home.png](https://i.postimg.cc/XXSVy5PP/home.png)](https://postimg.cc/jncVpDt6)
+[![menu.png](https://i.postimg.cc/FHxLNFdv/menu.png)](https://postimg.cc/Wdh37vwY)
 
-<a href='https://postimg.cc/Yh2jhgGH' target='_blank'><img src='https://i.postimg.cc/Yh2jhgGH/login.png' border='0' alt='login'/></a>
+[![login.png](https://i.postimg.cc/NfmXCkQ5/login.png)](https://postimg.cc/Yh2jhgGH)
+
+[![register.png](https://i.postimg.cc/qB9nG5VP/register.png)](https://postimg.cc/grHnz40s)
+
+[![pass-Recovery.png](https://i.postimg.cc/htndkQGM/pass-Recovery.png)](https://postimg.cc/QH6C5t1W)
+
+[![home.png](https://i.postimg.cc/XXSVy5PP/home.png)](https://postimg.cc/jncVpDt6)
