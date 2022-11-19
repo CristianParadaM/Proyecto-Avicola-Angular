@@ -1,0 +1,153 @@
+<div class="background2">
+    <div class="container-fluid" style="padding-left: 40px;padding-right: 40px;">
+        <div class="row">
+            <div class="input-div col-12 col-xl-6" [ngStyle]="{'margin-top':'30px'}">
+                <textarea class="search" id="1" type="text" [placeholder]="placeholderSearch" (input)="filtre(search.value)"
+                    #search></textarea>
+                <img src="assets/lupaicon.svg" alt="icon" class="icon ">
+            </div>
+        </div>
+        <div class="row">
+            <div class="table">
+                <table class="accordion" id="chickenParent">
+                    <thead>
+                        <tr>
+                            <th (click)="order(0)">{{nLote}}</th>
+                            <th (click)="order(1)">{{birthdate}}</th>
+                            <th (click)="order(2)">{{sheep}}</th>
+                            <th (click)="order(3)">{{quanty}}</th>
+                            <th (click)="order(4)">{{raceChickens}}</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let lot of lots; index as i">
+                        <tr class="accordion-item" [attr.selected]="isSelected(i)" [attr.par]="i%2==0" (click)="selectOption(i)">
+                            <td><button class="button-accordion" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+                                    [attr.aria-controls]="'collapse'+i">{{lot.lot}}</button></td>
+                            <td><button class="button-accordion" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+                                    [attr.aria-controls]="'collapse'+i">{{getParseDate(lot.date)}}</button></td>
+                            <td><button class="button-accordion" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+                                    [attr.aria-controls]="'collapse'+i">{{lot.sheed}}</button></td>
+                            <td><button class="button-accordion" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+                                    [attr.aria-controls]="'collapse'+i">{{lot.quanty}}</button></td>
+                            <td><button class="button-accordion" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="false"
+                                    [attr.aria-controls]="'collapse'+i">{{lot.race}}</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" [id]="'collapse'+i" class="accordion-collapse collapse"
+                                data-bs-parent="#chickenParent">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-12 col-xl">
+                                            <input id="2" class="input-lot" type="text" placeholder="lote" disabled
+                                                [value]="lot.lot">
+                                            <label for="2" class="titleborder">lote</label>
+                                        </div>
+                                        <div class="col-12 col-xl">
+                                            <input id="3" class="input-lot" type="date"
+                                                placeholder="Fecha de Nacimiento de las Aves"
+                                                [value]='getParseDate(lot.date, "y/m/d")'>
+                                            <label for="3" class="titleborder">Fecha de Nacimiento de las Aves</label>
+                                        </div>
+                                        <div class="col-12 col-xl">
+                                            <select id="4" class="input-lot">
+                                                <option value="NA">No Asignado</option>
+                                                <option value="G" *ngFor="let sheed of sheeds" [selected]="sheed.sheed === lot.sheed">{{sheed.sheed}}</option>
+                                            </select>
+                                            <label for="4" class="titleborder">Galpón</label>
+                                        </div>
+                                        <div class="col-12 col-xl">
+                                            <input id="5" class="input-lot" type="number" placeholder="Cantidad de Aves"
+                                                [value]="lot.quanty" style="border-color: red;">
+                                            <label for="5" class="titleborder">Cantidad de Aves</label>
+                                        </div>
+                                        <div class="col-12 col-xl">
+                                            <input id="6" class="input-lot" type="text" placeholder="Raza"
+                                                [value]="lot.race">
+                                            <label for="6" class="titleborder">Raza</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="advert">
+                                            Quedan menos de 100 espacios de aves disponibles recomendados según el espacio
+                                            que puede contener un galpón. Recuerda que exceder la cantidad recomendada de
+                                            Aves según el espacio que puede contener un galpón puede afectar la calidad de
+                                            vida de las Aves.
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <button class="delete-lot col-12 col-md-6 col-xl-2">
+                                            <p>Eliminar Lote</p>
+                                            <img src="assets/deleteicon.svg" alt="icon" class="icon">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <button class="add-lot col-12 col-md-6 col-xl-2" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                <p>Añadir Lote</p>
+                <img src="assets/addicon.svg" alt="icon" class="icon">
+            </button>
+            <div class="collapse collapse-vertical row" id="collapseWidthExample">
+                <form class="card card-body col-12 col-md-9 col-xl-6">
+                    <div class="row">
+                        <div class="col-12 col-xl">
+                            <input id="7" class="input-lot" type="text" placeholder="lote" readonly>
+                            <label for="7" class="titleborder">lote</label>
+                        </div>
+                        <div class="col-12 col-xl">
+                            <input id="8" class="input-lot" type="date" placeholder="Fecha de Nacimiento de las Aves"
+                              required >
+                            <label for="8" class="titleborder">Fecha de Nacimiento de las Aves</label>
+                        </div>
+                        <div class="col-12 col-xl">
+                            <select id="9" class="input-lot">
+                                <option value="NA" selected>No Asignado</option>
+                                <option value="G" *ngFor="let sheed of sheeds">{{sheed.sheed}}</option>
+                            </select>
+                            <label for="9" class="titleborder">Galpón</label>
+                        </div>
+                        <div class="col-12 col-xl">
+                            <input id="10" class="input-lot" type="number" placeholder="Cantidad de Aves"
+                                 style="border-color: orangered;" required>
+                            <label for="10" class="titleborder">Cantidad de Aves</label>
+                        </div>
+                        <div class="col-12 col-xl">
+                            <input id="11" class="input-lot" type="text" placeholder="Raza" required>
+                            <label for="11" class="titleborder">Raza</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="advert">
+                            Quedan menos de 100 espacios de aves disponibles recomendados según el espacio
+                            que puede contener un galpón. Recuerda que exceder la cantidad recomendada de
+                            Aves según el espacio que puede contener un galpón puede afectar la calidad de
+                            vida de las Aves.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="add-lot col-12 col-md-6 col-xl-2" style="margin-right: 10px;" >
+                            <p>Añadir</p>
+                            <img src="assets/addicon.svg" alt="icon" class="icon">
+                        </button>
+                        <button type="button" class="delete-lot col-12 col-md-6 col-xl-2" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                            <p>Cancelar</p>
+                            <img src="assets/deleteicon.svg" alt="icon" class="icon">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
